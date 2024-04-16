@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  gap: 5px;
+  width: 100%;
+}
+
+.current {
+  height: 10px;
+  width: 100%;
+  background-color: #b92a35;
+  border-radius: 3px;
+}
+
+.passive {
+  height: 10px;
+  width: 100%;
+  background-color: rgb(221, 221, 221);
+  border-radius: 3px;
+}
+
+.done {
+  height: 10px;
+  width: 100%;
+  background-color: rgb(0, 0, 102);
+  border-radius: 3px;
+}

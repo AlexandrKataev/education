@@ -1,0 +1,23 @@
+.primary {
+  cursor: pointer;
+  padding: 10px 25px;
+  background-color: #b92a35;
+  border-radius: 10px;
+  color: white;
+}
+
+.secondary {
+  cursor: pointer;
+  padding: 10px 25px;
+  background-color: #b92a3600;
+  border-radius: 10px;
+  color: white;
+}
+
+.passive {
+  cursor: pointer;
+  padding: 10px 25px;
+  background-color: #999999;
+  border-radius: 10px;
+  color: white;
+}

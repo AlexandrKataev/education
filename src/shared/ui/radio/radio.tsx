@@ -1,0 +1,17 @@
+import styles from './radio.module.css';
+
+type RadioProps = {
+  title: string;
+  value: string | number;
+  isChecked: boolean;
+  onClick: () => void;
+};
+
+export const Radio = ({ title, value, isChecked, onClick }: RadioProps) => {
+  return (
+    <div className={styles.container} onClick={onClick}>
+      <input type="radio" value={value} checked={isChecked} />
+      <label>{title}</label>
+    </div>
+  );
+};

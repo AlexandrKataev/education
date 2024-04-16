@@ -1,0 +1,77 @@
+{
+  "minutes": 15,
+  "questions": [
+    {
+      "id": 1,
+      "title": "Как называется хук, который позволяет выполнять побочные эффекты в React?",
+      "type": "singleSelect",
+      "variants": ["useReducer", "useRef", "useEffect", "useContext"]
+    },
+    {
+      "id": 2,
+      "title": "Что должен знать фронтенд-разработчик? Назовите три ключевых категории",
+      "type": "singleSelect",
+      "variants": ["HTML, CSS и JavaScript", "Kotlin, PHP и JavaScript", "PHP, HTML и CSS"]
+    },
+    {
+      "id": 3,
+      "title": "Какие хуки используются для оптимизации рендера в React?",
+      "type": "multySelect",
+      "variants": ["useMemo", "useRef", "useCallback", "useReducer", "useContext"]
+    },
+    {
+      "id": 4,
+      "title": "Как называется обёртка для компонента, позволяющая не ререндерить компонент если пропсы не изменились",
+      "type": "shortAnswer",
+      "variants": null
+    },
+    {
+      "id": 5,
+      "title": "Расскажите про отличия var, let и const",
+      "type": "longAnswer",
+      "variants": null
+    },
+    {
+      "id": 6,
+      "title": "Что выведет в консоли console.log(false == '')",
+      "type": "singleSelect",
+      "variants": ["true", "false", "undefined"]
+    },
+    {
+      "id": 7,
+      "title": "4 Как называется хук, который позволяет выполнять побочные эффекты в React?",
+      "type": "singleSelect",
+      "variants": ["useReducer", "useRef", "useEffect", "useContext"]
+    },
+    {
+      "id": 8,
+      "title": "5 Как называется хук, который позволяет выполнять побочные эффекты в React?",
+      "type": "singleSelect",
+      "variants": ["useReducer", "useRef", "useEffect", "useContext"]
+    },
+    {
+      "id": 9,
+      "title": "6 Как называется хук, который позволяет выполнять побочные эффекты в React?",
+      "type": "singleSelect",
+      "variants": ["useReducer", "useRef", "useEffect", "useContext"]
+    },
+    {
+      "id": 10,
+      "title": "4 Как называется хук, который позволяет выполнять побочные эффекты в React?",
+      "type": "singleSelect",
+      "variants": ["useReducer", "useRef", "useEffect", "useContext"]
+    },
+    {
+      "id": 11,
+      "title": "5 Как называется хук, который позволяет выполнять побочные эффекты в React?",
+      "type": "singleSelect",
+      "variants": ["useReducer", "useRef", "useEffect", "useContext"]
+    },
+    {
+      "id": 12,
+      "title": "6 Как называется хук, который позволяет выполнять побочные эффекты в React?",
+      "type": "singleSelect",
+      "variants": ["useReducer", "useRef", "useEffect", "useContext"]
+    }
+  ]
+}
