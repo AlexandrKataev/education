@@ -6,7 +6,7 @@ import { Answer, Test } from './types';
 export interface TestState {
   test: Test;
   current: number;
-  status: 'pending' | 'started' | 'completed';
+  status: 'pending' | 'started' | 'completed' | 'timeout';
   answers: Answer[];
 }
 
@@ -25,10 +25,20 @@ export const testSlice = createSlice({
       state.answers.push(action.payload);
       state.current += 1;
     },
+    start: (state) => {
+      state.status = 'started';
+      state.current = 0;
+    },
+    complete: (state) => {
+      state.status = 'completed';
+    },
+    timeout: (state) => {
+      state.status = 'timeout';
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { answer } = testSlice.actions;
+export const { answer, start, complete, timeout } = testSlice.actions;
 
 export default testSlice.reducer;
