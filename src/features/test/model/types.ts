@@ -7,5 +7,5 @@ export interface Test {
 
 export interface Answer {
   questionId: number;
-  answer: string;
+  answer: string | string[];
 }

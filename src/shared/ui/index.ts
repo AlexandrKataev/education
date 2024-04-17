@@ -2,3 +2,8 @@ export * from './badge';
 export * from './button/';
 export * from './progress-bar';
 export * from './radio';
+export * from './checkbox';
+export * from './input';
+export * from './multiply-select';
+export * from './single-select';
+export * from './textarea';

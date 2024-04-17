@@ -16,7 +16,7 @@
     {
       "id": 3,
       "title": "Какие хуки используются для оптимизации рендера в React?",
-      "type": "multySelect",
+      "type": "multiplySelect",
       "variants": ["useMemo", "useRef", "useCallback", "useReducer", "useContext"]
     },
     {
@@ -39,13 +39,13 @@
     },
     {
       "id": 7,
-      "title": "4 Как называется хук, который позволяет выполнять побочные эффекты в React?",
-      "type": "singleSelect",
-      "variants": ["useReducer", "useRef", "useEffect", "useContext"]
+      "title": "Для чего используется хук useContext?",
+      "type": "longAnswer",
+      "variants": null
     },
     {
       "id": 8,
-      "title": "5 Как называется хук, который позволяет выполнять побочные эффекты в React?",
+      "title": "Какой метод в JavaScript",
       "type": "singleSelect",
       "variants": ["useReducer", "useRef", "useEffect", "useContext"]
     },

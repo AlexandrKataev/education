@@ -7,7 +7,7 @@ type RadioProps = {
   onClick: () => void;
 };
 
-export const Radio = ({ title, value, isChecked, onClick }: RadioProps) => {
+export const Radio = ({ title, value, isChecked = false, onClick }: RadioProps) => {
   return (
     <div className={styles.container} onClick={onClick}>
       <input type="radio" value={value} checked={isChecked} />
