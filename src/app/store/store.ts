@@ -30,6 +30,7 @@ const initialState = loadStateFromLocalStorage();
 
 const store = configureStore({
   preloadedState: initialState,
+  //@ts-ignore
   reducer: { test },
 });
 

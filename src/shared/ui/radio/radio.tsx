@@ -10,7 +10,7 @@ type RadioProps = {
 export const Radio = ({ title, value, isChecked = false, onClick }: RadioProps) => {
   return (
     <div className={styles.container} onClick={onClick}>
-      <input type="radio" value={value} checked={isChecked} onChange={(e) => {}} />
+      <input type="radio" value={value} checked={isChecked} onChange={() => {}} />
       <label>{title}</label>
     </div>
   );
