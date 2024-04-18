@@ -3,27 +3,38 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import test from '@features/test/model/testSlice';
 
-//@ts-ignore
-const localStorageMiddleware = ({ getState }) => {
-  //@ts-ignore
-  return (next) => (action) => {
-    const result = next(action);
-    localStorage.setItem('applicationState', JSON.stringify(getState()));
-    return result;
-  };
-};
-
-const reHydrateStore = () => {
-  if (localStorage.getItem('applicationState') !== null) {
-    //@ts-ignore
-    return JSON.parse(localStorage.getItem('applicationState')); // re-hydrate the store
+const loadStateFromLocalStorage = () => {
+  try {
+    const serializedState = localStorage.getItem('reduxState');
+    if (serializedState === null) {
+      return undefined; // Если нет сохраненного состояния, возвращаем undefined
+    }
+    return JSON.parse(serializedState);
+  } catch (err) {
+    console.error('Error loading state from localStorage:', err);
+    return undefined;
   }
 };
 
+// Функция для сохранения состояния в LocalStorage
+const saveStateToLocalStorage = (state: RootState) => {
+  try {
+    const serializedState = JSON.stringify(state);
+    localStorage.setItem('reduxState', serializedState);
+  } catch (err) {
+    console.error('Error saving state to localStorage:', err);
+  }
+};
+
+const initialState = loadStateFromLocalStorage();
+
 const store = configureStore({
   reducer: { test },
-  preloadedState: reHydrateStore(),
-  // middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(localStorageMiddleware),
+  preloadedState: initialState,
+});
+
+store.subscribe(() => {
+  saveStateToLocalStorage(store.getState());
 });
 
 export type RootState = ReturnType<typeof store.getState>;

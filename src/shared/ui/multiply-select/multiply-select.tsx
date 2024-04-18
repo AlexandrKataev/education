@@ -13,12 +13,13 @@ export const MultiplySelect = ({ variants, onChange }: MultiplySelectProps) => {
 
   const onClick = (value: string) => {
     if (selected.some((el) => el === value)) {
-      setSelected(selected.filter((el) => el !== value));
-      onChange(selected);
+      const filtered = [...selected.filter((el) => el !== value)];
+      setSelected(filtered);
+      onChange(filtered);
       return;
     }
+    onChange([...selected, value]);
     setSelected((state) => [...state, value]);
-    onChange(selected);
   };
   return (
     <div className={styles.container}>

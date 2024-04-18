@@ -1,5 +1,5 @@
 {
-  "minutes": 0.1,
+  "minutes": 15,
   "questions": [
     {
       "id": 1,
@@ -45,33 +45,33 @@
     },
     {
       "id": 8,
-      "title": "Какой метод в JavaScript",
+      "title": "Какой метод в JavaScript позволяет выполнить функцию для каждого элемента массива и возвращает новый массив?",
       "type": "singleSelect",
-      "variants": ["useReducer", "useRef", "useEffect", "useContext"]
+      "variants": ["map", "forEach", "reduce"]
     },
     {
       "id": 9,
-      "title": "6 Как называется хук, который позволяет выполнять побочные эффекты в React?",
+      "title": "Какой вспомогательный тип в TypeScript позволяет убрать некоторые поля из типа?",
       "type": "singleSelect",
-      "variants": ["useReducer", "useRef", "useEffect", "useContext"]
+      "variants": ["Record", "Required", "Omit", "Partial"]
     },
     {
       "id": 10,
-      "title": "4 Как называется хук, который позволяет выполнять побочные эффекты в React?",
-      "type": "singleSelect",
-      "variants": ["useReducer", "useRef", "useEffect", "useContext"]
+      "title": "В чём различие между useEffect и useLayoutEffect?",
+      "type": "longAnswer",
+      "variants": null
     },
     {
       "id": 11,
-      "title": "5 Как называется хук, который позволяет выполнять побочные эффекты в React?",
-      "type": "singleSelect",
-      "variants": ["useReducer", "useRef", "useEffect", "useContext"]
+      "title": "Какие стейт-менеджеры вы знаете?",
+      "type": "shortAnswer",
+      "variants": null
     },
     {
       "id": 12,
-      "title": "6 Как называется хук, который позволяет выполнять побочные эффекты в React?",
-      "type": "singleSelect",
-      "variants": ["useReducer", "useRef", "useEffect", "useContext"]
+      "title": "Какие значения в JavaScript вернут false при приведению к типу boolean?",
+      "type": "multiplySelect",
+      "variants": ["'false'", "0", "''", "null", "'undefined'", "false", "-1"]
     }
   ]
 }

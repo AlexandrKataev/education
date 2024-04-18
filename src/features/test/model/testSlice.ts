@@ -9,7 +9,7 @@ export interface TestState {
   current: number;
   status: 'pending' | 'started' | 'completed' | 'timeout';
   answers: Answer[];
-  endTime: Dayjs | null;
+  endTime: string | null;
 }
 
 const initialState: TestState = {
@@ -26,12 +26,17 @@ export const testSlice = createSlice({
   reducers: {
     answer: (state, action: PayloadAction<Answer>) => {
       state.answers.push(action.payload);
-      state.current += 1;
+      if (state.test.questions.length <= state.current + 1) {
+        state.status = 'completed';
+        state.endTime = null;
+      } else {
+        state.current += 1;
+      }
     },
     start: (state, action: PayloadAction<number>) => {
       state.status = 'started';
       state.current = 0;
-      state.endTime = dayjs().add(action.payload, 'minutes');
+      state.endTime = dayjs().add(action.payload, 'minutes').format();
     },
     complete: (state) => {
       state.status = 'completed';

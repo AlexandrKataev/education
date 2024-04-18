@@ -17,7 +17,7 @@ export const Question = ({ question }: QuestionProps) => {
   const [answerDto, setAnswerDto] = useState<Answer | null>(null);
 
   const onClickAnswer = () => {
-    answerDto && dispatch(answer(answerDto));
+    answerDto?.answer.length && dispatch(answer(answerDto));
     setAnswerDto(null);
   };
 
@@ -42,7 +42,9 @@ export const Question = ({ question }: QuestionProps) => {
       {question.type === 'longAnswer' && (
         <Textarea onChange={onChangeAnswer} value={(answerDto?.answer as string) || ''} />
       )}
-      <Button onClick={onClickAnswer}>Ответить</Button>
+      <Button variant={answerDto?.answer.length ? 'primary' : 'passive'} onClick={onClickAnswer}>
+        Ответить
+      </Button>
     </>
   );
 };
