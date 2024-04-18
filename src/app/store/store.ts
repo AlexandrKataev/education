@@ -29,8 +29,8 @@ const saveStateToLocalStorage = (state: RootState) => {
 const initialState = loadStateFromLocalStorage();
 
 const store = configureStore({
-  reducer: { test },
   preloadedState: initialState,
+  reducer: { test },
 });
 
 store.subscribe(() => {

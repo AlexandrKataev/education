@@ -2,7 +2,7 @@ import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 import test from '@shared/data/test.json';
 import { Answer, Test } from './types';
-import dayjs, { Dayjs } from 'dayjs';
+import dayjs from 'dayjs';
 
 export interface TestState {
   test: Test;
