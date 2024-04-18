@@ -10,8 +10,8 @@ type RadioProps = {
 export const Radio = ({ title, value, isChecked = false, onClick }: RadioProps) => {
   return (
     <div className={styles.container} onClick={onClick}>
-      <input type="radio" value={value} checked={isChecked} onChange={() => {}} />
-      <label>{title}</label>
+      <div className={isChecked ? styles['radio-checked'] : styles.radio} />
+      <label htmlFor={value + ''}>{title}</label>
     </div>
   );
 };

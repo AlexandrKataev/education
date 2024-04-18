@@ -1,19 +1,19 @@
 .primary {
-  padding: 10px 25px;
+  padding: 7px 20px;
   background-color: #b92a35;
   border-radius: 10px;
 }
 
 .secondary {
   height: 100%;
-  padding: 10px 25px;
+  padding: 7px 20px;
   background-color: #b92a3600;
   border: 1px solid black;
   border-radius: 10px;
 }
 
 .passive {
-  padding: 10px 25px;
+  padding: 7px 20px;
   background-color: #999999;
   border-radius: 10px;
 }

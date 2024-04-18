@@ -1,4 +1,21 @@
 .container {
   display: flex;
-  gap: 15px;
+  align-items: center;
+  gap: 8px;
+}
+
+.radio-checked {
+  width: 14px;
+  height: 14px;
+  border-radius: 7px;
+  background-color: #b92a35;
+  border: 1px solid #b92a35;
+}
+
+.radio {
+  width: 14px;
+  height: 14px;
+  border-radius: 7px;
+
+  border: 1px solid #b92a35;
 }

@@ -10,7 +10,7 @@ type CheckboxProps = {
 export const Checkbox = ({ title, value, isChecked = false, onClick }: CheckboxProps) => {
   return (
     <div className={styles.container} onClick={onClick}>
-      <input type="checkbox" value={value} checked={isChecked} onChange={() => {}} />
+      <div className={isChecked ? styles['checkbox-checked'] : styles.checkbox} />
       <label>{title}</label>
     </div>
   );

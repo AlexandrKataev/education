@@ -1,5 +1,7 @@
 import { Badge } from '@shared/ui';
 
+import styles from './timer.module.css';
+
 import { useEffect, useState } from 'react';
 
 import { useAppDispatch, useAppSelector } from '@app/store/store';
@@ -28,5 +30,9 @@ export default function Timer() {
     return () => clearInterval(interval);
   }, []);
 
-  return <Badge variant="secondary">{currentTime}</Badge>;
+  return (
+    <Badge variant="secondary">
+      <div className={styles.time}>{currentTime}</div>
+    </Badge>
+  );
 }
