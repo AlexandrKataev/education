@@ -3,17 +3,13 @@
   align-items: center;
   gap: 8px;
 }
-.checkbox-checked {
-  width: 14px;
-  height: 14px;
-  border-radius: 3px;
-  background-color: #b92a35;
-  border: 1px solid #b92a35;
-}
 
 .checkbox {
   width: 14px;
   height: 14px;
   border-radius: 3px;
   border: 1px solid #b92a35;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
