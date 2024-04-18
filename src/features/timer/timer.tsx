@@ -1,43 +1,30 @@
-import React, { FC, useLayoutEffect } from 'react';
-import styles from './timer.module.css';
 import { Badge } from '@shared/ui';
 
 import { useEffect, useState } from 'react';
-import dayjs from 'dayjs';
-import relativeTime from 'dayjs/plugin/relativeTime';
-import { useAppDispatch } from '@app/store/store';
+import { Dayjs } from 'dayjs';
+
+import { useAppDispatch, useAppSelector } from '@app/store/store';
 import { timeout } from '@features/test/model/testSlice';
+import { getFormattedTime } from './helpers';
 
-dayjs.extend(relativeTime);
-
-type TimerProps = {
-  minutes: number;
-};
-
-const getTime = (minutes: number) => {
-  const endTime = dayjs().add(minutes, 'minutes');
-  const now = dayjs();
-  const elapsedTime = endTime.diff(now, 'second');
-  const formattedTime = dayjs().startOf('day').second(elapsedTime).format('mm:ss');
-  return formattedTime;
-};
-
-export default function Timer({ minutes }: TimerProps) {
+export default function Timer() {
   const dispatch = useAppDispatch();
-  const [currentTime, setCurrentTime] = useState<any>(getTime(minutes));
+  const endTime = useAppSelector((state) => state.test.endTime);
+  const [currentTime, setCurrentTime] = useState<string>(getFormattedTime(endTime as Dayjs));
 
   useEffect(() => {
-    const endTime = dayjs().add(minutes, 'minutes').add(1, 'second');
+    if (!endTime) {
+      return;
+    }
+
     let interval = setInterval(() => {
-      const now = dayjs();
-      const elapsedTime = endTime.diff(now, 'second');
-      const formattedTime = dayjs().startOf('day').second(elapsedTime).format('mm:ss');
+      const formattedTime = getFormattedTime(endTime);
 
       if (formattedTime === '00:00') {
         dispatch(timeout());
       }
       setCurrentTime(formattedTime);
-    }, 1000);
+    }, 500);
     return () => clearInterval(interval);
   }, []);
 

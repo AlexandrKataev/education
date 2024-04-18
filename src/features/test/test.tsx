@@ -1,4 +1,4 @@
-import { Badge, Button, ProgressBar } from '@shared/ui';
+import { Button, ProgressBar } from '@shared/ui';
 import styles from './test.module.css';
 import { Question } from '@entities/question';
 import { useAppDispatch, useAppSelector } from '@app/store/store';
@@ -14,7 +14,7 @@ export const Test = () => {
   const status = useAppSelector((state) => state.test.status);
 
   const onStart = () => {
-    dispatch(start());
+    dispatch(start(testDuration));
   };
 
   return (
@@ -24,7 +24,7 @@ export const Test = () => {
         <div className={styles.answer}>
           <div className={styles.title}>
             <h1>Тестирование</h1>
-            <Timer minutes={testDuration} />
+            <Timer />
           </div>
           <ProgressBar current={currentStep} steps={steps} />
           <Question question={question} />
