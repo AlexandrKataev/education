@@ -1,5 +1,6 @@
 .input {
-  min-width: 300px;
+  width: calc(100% - 25px);
+  max-width: 500px;
   padding: 10px 12px;
   line-height: 1.3rem;
 }
