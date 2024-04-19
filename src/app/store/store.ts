@@ -7,22 +7,29 @@ const loadStateFromLocalStorage = () => {
   try {
     const serializedState = localStorage.getItem('reduxState');
     if (serializedState === null) {
-      return undefined; // Если нет сохраненного состояния, возвращаем undefined
+      return undefined;
     }
     return JSON.parse(serializedState);
   } catch (err) {
-    console.error('Error loading state from localStorage:', err);
+    console.error('Ошибка загрузки стейта из localStotage:', err);
     return undefined;
   }
 };
 
-// Функция для сохранения состояния в LocalStorage
 const saveStateToLocalStorage = (state: RootState) => {
   try {
     const serializedState = JSON.stringify(state);
     localStorage.setItem('reduxState', serializedState);
   } catch (err) {
-    console.error('Error saving state to localStorage:', err);
+    console.error('Ошибка сохранения стейта в localStorage:', err);
+  }
+};
+
+const cleartLocalStorage = () => {
+  try {
+    localStorage.clear();
+  } catch (err) {
+    console.error('Ошибка очистки localStorage:', err);
   }
 };
 
@@ -35,7 +42,12 @@ const store = configureStore({
 });
 
 store.subscribe(() => {
-  saveStateToLocalStorage(store.getState());
+  const state = store.getState();
+  if (state.test.status === 'completed' || state.test.status === 'timeout') {
+    cleartLocalStorage();
+    return;
+  }
+  saveStateToLocalStorage(state);
 });
 
 export type RootState = ReturnType<typeof store.getState>;
